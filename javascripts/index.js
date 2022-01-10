@@ -45,16 +45,36 @@ const loadList = event => {
     resetMainDiv()
     const h1 = document.createElement('h1')
     const p = document.createElement('p')
+    const form = document.createElement('form')
+    const rowDiv = document.createElement('div')
+    const div1 = document.createElement('div')
+    const label = document.createElement('label')
+    const input = document.createElement('input')
+    const div2 = document.createElement('div')
 
-    h1.className = "center-align"
-    p.className = "center-align"
 
     h1.innerText = 'Your Shopping List'
-    p.innerText = "enter your items and their categories below:"
-    document.createElement('form')
+    p.innerText = 'enter your items and their categories below:'
+    
+    
+    rowDiv.className = 'row'
 
+    div1.className = 'input-field col s6'
+    input.setAttribute('type', 'text')
+    input.setAttribute('id', 'grocery item')
+    
+    label.setAttribute('for', 'grocery item')
+    label.innerText = "Grocery Item"
+    
+    div1.appendChild(input)
+    div1.appendChild(label)
+    
+    rowDiv.appendChild(div1)
+    rowDiv.appendChild(div2)
+    form.appendChild(rowDiv)
     mainDiv().appendChild(h1)
     mainDiv().appendChild(p)
+    mainDiv().appendChild(form)
 
 }
 
@@ -73,7 +93,7 @@ const loadMeals = event => {
     
     h1.innerText = "Can't decide what to eat?"
 
-    button.className = "waves-effect waves-light btn"
+    button.className = "waves-effect waves-light btn orange lighten-2"
     button.innerText = "Click Here"
 
     randomMealDiv.setAttribute('id','random')
@@ -114,14 +134,11 @@ const loadRandomMeal = (meal) => {
     mealLink.href = meal.link
     mealLink.title = "Get the Recipe"
 
-    
-    
 
     actionDiv.className = 'card-action'
     contentDiv.className = 'card-content'
     stackedDiv.className = 'card-stacked'
 
-    
 
     mealLink.appendChild(linkText)
     actionDiv.appendChild(mealLink)
@@ -134,29 +151,6 @@ const loadRandomMeal = (meal) => {
     horizontalDiv.appendChild(stackedDiv)
     randomMealDiv.appendChild(header)
     randomMealDiv.appendChild(horizontalDiv)
-    // div.className = "card-image waves-effect waves-block waves-light"
-    // const mealPicture = document.createElement('img')
-    // mealPicture.className = 'activator'
-    // mealPicture.src = meal.image
-    // const contentDiv = document.createElement('div')
-    // contentDiv.className = 'card-content'
-    // const 
-
-    // const mealName = document.createElement('h2')
-    
-    // const mealAnchor = document.createElement('a')
-    // const linkText = document.createTextNode("Get the Recipe")
-    // mealAnchor.appendChild(linkText)
-    // mealAnchor.title = "Get the Recipe"
-    // mealAnchor.href = meal.link
-
-    // mealName.innerText = meal.meal
-   
-    // div.appendChild(mealPicture)
-
-    // randomMealDiv.appendChild(div)
-    // randomMealDiv.appendChild(mealName)
-    // randomMealDiv.appendChild(mealAnchor)
 
 }
 
@@ -168,6 +162,17 @@ const getRandomMeal = () => {
     .then(response => response.json())
     .then(meal => loadRandomMeal(meal))
 }
+
+//NODE creators
+
+const createColumn = columnSize => {
+    const div = document.createElement('div')
+    div.className = 'input-field col' + columnSize
+    return div
+}
+
+
+
 //Misc
 
 const resetMainDiv = () => {

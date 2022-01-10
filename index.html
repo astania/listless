@@ -26,11 +26,15 @@
           </ul>
         </div>
       </nav>
-    <div class="container">
-        <div id="main"></div>
-        <div id="form"></div>
+    <div class="container" id="main">
     </div>
     
+    <!-- initializer for materialize form input javascript -->
+    <script>
+        $(document).ready(function(){
+        $('select').formSelect();
+      });
+    </script>
     <script src="javascripts/index.js"></script>
 </body>
 </html>
