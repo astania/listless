@@ -50,7 +50,8 @@ const loadList = event => {
     const div1 = document.createElement('div')
     const label = document.createElement('label')
     const input = document.createElement('input')
-    const div2 = document.createElement('div')
+    const div2 = createSelectField('category', 'Category', 'Category', ['Vegetable', 'Meat', 'Dairy', 'Grain', 'Misc'] )
+    
 
 
     h1.innerText = 'Your Shopping List'
@@ -65,6 +66,7 @@ const loadList = event => {
     
     label.setAttribute('for', 'grocery item')
     label.innerText = "Grocery Item"
+
     
     div1.appendChild(input)
     div1.appendChild(label)
@@ -169,6 +171,35 @@ const createColumn = columnSize => {
     const div = document.createElement('div')
     div.className = 'input-field col' + columnSize
     return div
+}
+
+const createSelectField = (id, placeholder, labelText, options=[]) => {
+    const div = createColumn('s6')
+    const select = document.createElement('select')
+    const option = document.createElement('option')
+    const label = document.createElement('label')
+
+    select.setAttribute('id', id)
+
+    option.setAttribute('disabled', true)
+    option.setAttribute('selected', true)
+    option.value = ''
+    option.innerText = placeholder
+    select.appendChild(option)
+
+    label.setAttribute('id', id)
+    label.innerText = labelText
+
+
+    options.forEach(optionText => {
+        const option = document.createElement('option')
+        option.innerText = optionText
+        option.value = optionText
+        select.appendChild(option)
+    })    
+
+    div.appendChild(select)
+    div.appendChild(label)
 }
 
 
