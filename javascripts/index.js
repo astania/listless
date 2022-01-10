@@ -1,4 +1,5 @@
 //Globals
+const baseUrl = "http://localhost:3000"
 
 //Node getters
 const mainDiv = () => document.getElementById('main')
@@ -64,28 +65,115 @@ const loadMeals = event => {
     const h1 = document.createElement('h1')
     const button = document.createElement('a')
     const div = document.createElement('div')
-
+    const randomMealDiv = document.createElement('div')
+    
 
     div.className = "center-align"
+    randomMealDiv.className = "col s12 m7"
     
     h1.innerText = "Can't decide what to eat?"
 
     button.className = "waves-effect waves-light btn"
     button.innerText = "Click Here"
+
+    randomMealDiv.setAttribute('id','random')
+
+    button.addEventListener('click', getRandomMeal)
     
-
-
     div.appendChild(h1)
     div.appendChild(button)
 
     mainDiv().appendChild(div)
+    mainDiv().appendChild(randomMealDiv)
 }
 
+const loadRandomMeal = (meal) => {
+    const randomMealDiv = document.getElementById('random')
+    randomMealDiv.innerHTML = ''
+    const header = document.createElement('h2')
+    const horizontalDiv = document.createElement('div')
+    const imageDiv = document.createElement('div')
+    const mealPicture = document.createElement('img')
+    const stackedDiv = document.createElement('div')
+    const contentDiv = document.createElement('div')
+    const content = document.createElement('p')
+    const actionDiv = document.createElement('div')
+    const mealLink = document.createElement('a')
+    const linkText = document.createTextNode("Get the Recipe")
+
+    header.className = "header"
+    header.innerText = 'You should make:'
+    
+    horizontalDiv.className = "card horizontal"
+
+    imageDiv.className = "card-image"
+    mealPicture.src = meal.image
+
+    content.innerText = meal.meal
+
+    mealLink.href = meal.link
+    mealLink.title = "Get the Recipe"
+
+    
+    
+
+    actionDiv.className = 'card-action'
+    contentDiv.className = 'card-content'
+    stackedDiv.className = 'card-stacked'
+
+    
+
+    mealLink.appendChild(linkText)
+    actionDiv.appendChild(mealLink)
+    randomMealDiv.appendChild(header)
+    randomMealDiv.appendChild(horizontalDiv)
+    imageDiv.appendChild(mealPicture)
+    contentDiv.appendChild(content)
+    stackedDiv.appendChild(contentDiv)
+    stackedDiv.appendChild(actionDiv)
+    horizontalDiv.appendChild(stackedDiv)
+    randomMealDiv.appendChild(header)
+    randomMealDiv.appendChild(horizontalDiv)
+    // div.className = "card-image waves-effect waves-block waves-light"
+    // const mealPicture = document.createElement('img')
+    // mealPicture.className = 'activator'
+    // mealPicture.src = meal.image
+    // const contentDiv = document.createElement('div')
+    // contentDiv.className = 'card-content'
+    // const 
+
+    // const mealName = document.createElement('h2')
+    
+    // const mealAnchor = document.createElement('a')
+    // const linkText = document.createTextNode("Get the Recipe")
+    // mealAnchor.appendChild(linkText)
+    // mealAnchor.title = "Get the Recipe"
+    // mealAnchor.href = meal.link
+
+    // mealName.innerText = meal.meal
+   
+    // div.appendChild(mealPicture)
+
+    // randomMealDiv.appendChild(div)
+    // randomMealDiv.appendChild(mealName)
+    // randomMealDiv.appendChild(mealAnchor)
+
+}
+
+//Requests
+
+const getRandomMeal = () => {
+    const randomMeal = [Math.ceil(Math.random()*6)]
+    fetch(baseUrl + '/meals' + "/" + randomMeal)
+    .then(response => response.json())
+    .then(meal => loadRandomMeal(meal))
+}
 //Misc
 
 const resetMainDiv = () => {
     mainDiv().innerHTML = ''
 }
+
 
 //WHEN THE DOM LOADS
 document.addEventListener('DOMContentLoaded', function(){

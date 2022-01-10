@@ -3,37 +3,43 @@
         {
             "id": 1,
             "meal": "Vegetarian Tacos",
-            "link": "https://www.loveandlemons.com/vegetarian-tacos/"
+            "link": "https://www.loveandlemons.com/vegetarian-tacos/",
+            "image": "https://cdn.loveandlemons.com/wp-content/uploads/2015/09/vegetarian-tacos.jpg"
         },
 
         {
             "id": 2,
             "meal": "Chili",
-            "link": "https://www.thewholesomedish.com/the-best-classic-chili/"
+            "link": "https://www.thewholesomedish.com/the-best-classic-chili/",
+            "image": "https://www.thewholesomedish.com/wp-content/uploads/2018/05/600-X-900.jpg"
         },
 
         {
             "id": 3,
             "meal": "Schnitzel",
-            "link": "https://natashaskitchen.com/pork-schnitzel-recipe/"
+            "link": "https://natashaskitchen.com/pork-schnitzel-recipe/",
+            "image": "https://natashaskitchen.com/wp-content/uploads/2016/02/Pork-Schnitzel-Recipe-7.jpg"
         },
         
         {
             "id": 4,
             "meal": "Chicken Cesar Salad",
-            "link": "https://www.cookingclassy.com/chicken-caesar-salad/"
+            "link": "https://www.cookingclassy.com/chicken-caesar-salad/",
+            "image": "https://www.cookingclassy.com/wp-content/uploads/2015/01/chicken-caesar-salad-srgb...jpg"
         },
 
         {
             "id": 5,
             "meal": "Baked Salmon",
-            "link": "https://cafedelites.com/sheet-pan-garlic-butter-baked-salmon/"
+            "link": "https://cafedelites.com/sheet-pan-garlic-butter-baked-salmon/",
+            "image": "https://cafedelites.com/wp-content/uploads/2018/03/Sheet-Pan-Salmon-1-1024x1536.jpg"
         },
 
         {
             "id": 6,
             "meal": "Banh Mi",
-            "link": "https://www.loveandlemons.com/banh-mi/"
+            "link": "https://www.loveandlemons.com/banh-mi/",
+            "image": "https://cdn.loveandlemons.com/wp-content/uploads/2019/02/banh-mi-sandwich.jpg"
         }
     ]
 
