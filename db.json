@@ -1,0 +1,40 @@
+{
+    "meals": [
+        {
+            "id": 1,
+            "meal": "Vegetarian Tacos",
+            "link": "https://www.loveandlemons.com/vegetarian-tacos/"
+        },
+
+        {
+            "id": 2,
+            "meal": "Chili",
+            "link": "https://www.thewholesomedish.com/the-best-classic-chili/"
+        },
+
+        {
+            "id": 3,
+            "meal": "Schnitzel",
+            "link": "https://natashaskitchen.com/pork-schnitzel-recipe/"
+        },
+        
+        {
+            "id": 4,
+            "meal": "Chicken Cesar Salad",
+            "link": "https://www.cookingclassy.com/chicken-caesar-salad/"
+        },
+
+        {
+            "id": 5,
+            "meal": "Baked Salmon",
+            "link": "https://cafedelites.com/sheet-pan-garlic-butter-baked-salmon/"
+        },
+
+        {
+            "id": 6,
+            "meal": "Banh Mi",
+            "link": "https://www.loveandlemons.com/banh-mi/"
+        }
+    ]
+
+}

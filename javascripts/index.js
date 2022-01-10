@@ -4,6 +4,7 @@
 const mainDiv = () => document.getElementById('main')
 const homeLink = () => document.getElementById('home-link')
 const listLink = () => document.getElementById('list-link')
+const mealLink = () => document.getElementById('meal-link')
 
 //Event Listeners
 
@@ -15,6 +16,9 @@ const attachListLinkEvent = () => {
     listLink().addEventListener('click', loadList)
 }
 
+const attachMealLinkEvent = () => {
+    mealLink().addEventListener('click', loadMeals)
+}
 //Event Handlers
 
 const loadHome = event => {
@@ -27,7 +31,7 @@ const loadHome = event => {
 
     h1.className = "center-align"
     h4.className = "center-align container"
-    h1.innerText = 'Welcome to Listless'
+    h1.innerText = 'Welcome to LISTLESS'
     h4.innerText = "Listless allows you to sort your shopping list into categories, so you won't leave the dairy section without grabbing oat milk ever again!"
 
     
@@ -53,6 +57,30 @@ const loadList = event => {
 
 }
 
+const loadMeals = event => {
+    event.preventDefault()
+    resetMainDiv()
+
+    const h1 = document.createElement('h1')
+    const button = document.createElement('a')
+    const div = document.createElement('div')
+
+
+    div.className = "center-align"
+    
+    h1.innerText = "Can't decide what to eat?"
+
+    button.className = "waves-effect waves-light btn"
+    button.innerText = "Click Here"
+    
+
+
+    div.appendChild(h1)
+    div.appendChild(button)
+
+    mainDiv().appendChild(div)
+}
+
 //Misc
 
 const resetMainDiv = () => {
@@ -65,4 +93,6 @@ document.addEventListener('DOMContentLoaded', function(){
     loadHome()
     attachHomePageLinkEvent()
     attachListLinkEvent()
+    attachMealLinkEvent()
 })
+
