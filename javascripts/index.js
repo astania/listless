@@ -97,6 +97,7 @@ const loadList = event => {
     p.className = 'center-align'
 
     rowDiv.className = 'row'
+    rowDiv.style.marginTop = '30px'
 
     div1.className = 'input-field col s6'
     input.setAttribute('type', 'text')
@@ -107,7 +108,7 @@ const loadList = event => {
 
     submit.setAttribute('type', 'submit')
     submit.setAttribute('id', 'submit-form')
-    submit.style.display = 'table-row'
+    submit.style.marginTop = '20px'
     submit.className = 'btn waves-effect waves-light orange lighten-2'
     submit.innerText = 'Add to list'
 
@@ -127,7 +128,7 @@ const loadList = event => {
     rowDiv.appendChild(div1)
     rowDiv.appendChild(div2)
     form.appendChild(rowDiv)
-    form.appendChild(submit)
+    rowDiv.appendChild(submit)
     listDiv.appendChild(topHeading)
     listDiv.appendChild(vegetable)
     listDiv.appendChild(meat)
