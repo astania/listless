@@ -11,7 +11,7 @@ const mealLink = () => document.getElementById('meal-link')
 const groceryItem = () => document.getElementById('grocery-item')
 const category = () => document.getElementById('category')
 const shoppingListDiv = () => document.getElementById('list-div')
-const vegetableCategory = () => document.getElementById('category-vegetable')
+const freshCategory = () => document.getElementById('category-fresh')
 const meatCategory = () => document.getElementById('category-meat')
 const dairyCategory = () => document.getElementById('category-dairy')
 const grainCategory = () => document.getElementById('category-grain')
@@ -78,9 +78,9 @@ const loadList = event => {
     const div1 = document.createElement('div')
     const label = document.createElement('label')
     const input = document.createElement('input')
-    const div2 = createSelectField('category', 's3', 'Category', 'Category', ['Vegetable', 'Meat', 'Dairy', 'Grain', 'Misc'])
+    const div2 = createSelectField('category', 's3', 'Category', 'Category', ['Fresh', 'Meat', 'Dairy', 'Grain', 'Misc'])
     const submit = document.createElement('button')
-    const vegetable = document.createElement('h6')
+    const fresh = document.createElement('h6')
     const meat = document.createElement('h6')
     const dairy = document.createElement('h6')
     const grain = document.createElement('h6')
@@ -112,8 +112,8 @@ const loadList = event => {
     submit.className = 'btn waves-effect waves-light orange lighten-2'
     submit.innerText = 'Add to list'
 
-    vegetable.innerText = 'Vegetables'
-    vegetable.setAttribute('id', 'category-vegetable')
+    fresh.innerText = 'Fresh'
+    fresh.setAttribute('id', 'category-fresh')
     meat.innerText = 'Meats'
     meat.setAttribute('id', 'category-meat')
     dairy.innerText = 'Dairy'
@@ -130,7 +130,7 @@ const loadList = event => {
     form.appendChild(rowDiv)
     rowDiv.appendChild(submit)
     listDiv.appendChild(topHeading)
-    listDiv.appendChild(vegetable)
+    listDiv.appendChild(fresh)
     listDiv.appendChild(meat)
     listDiv.appendChild(dairy)
     listDiv.appendChild(grain)
@@ -167,8 +167,8 @@ const submitForm = event => {
 
     const selectorValue = category().value
 
-    if (selectorValue === 'Vegetable') {
-        vegetableCategory().appendChild(ul)
+    if (selectorValue === 'Fresh') {
+        freshCategory().appendChild(ul)
     } else if (selectorValue === 'Meat') {
         meatCategory().appendChild(ul)
     } else if (selectorValue === 'Dairy') {
