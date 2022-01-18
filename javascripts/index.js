@@ -294,7 +294,7 @@ const createSelectField = (id, colSize, placeholder, labelText, options = []) =>
     option.setAttribute('selected', true);
     option.value = '';
     option.innerText = placeholder;
-    label.setAttribute('id', id);
+    label.setAttribute('for', id);
     label.innerText = labelText;
 
     select.appendChild(option);
