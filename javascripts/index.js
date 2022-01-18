@@ -103,7 +103,7 @@ const loadList = event => {
     input.setAttribute('type', 'text')
     input.setAttribute('id', 'grocery-item')
 
-    label.setAttribute('for', 'grocery item')
+    label.setAttribute('for', 'grocery-item')
     label.innerText = 'Grocery Item'
 
     submit.setAttribute('type', 'submit')
