@@ -158,9 +158,10 @@ const submitForm = event => {
     shoppingItem.style.marginLeft = '50px'
 
     deleteButton.textContent = 'x'
-    deleteButton.setAttribute('class', 'waves-effect waves-light btn-small')
+    deleteButton.setAttribute('class', 'waves-effect waves-light btn-small orange lighten-2')
     deleteButton.style.marginLeft = '8px'
     deleteButton.addEventListener('click', deleteItem)
+    
 
     shoppingItem.appendChild(deleteButton)
     ul.appendChild(shoppingItem)
