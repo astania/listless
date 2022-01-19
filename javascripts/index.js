@@ -17,7 +17,6 @@ const dairyCategory = () => document.getElementById('category-dairy')
 const grainCategory = () => document.getElementById('category-grain')
 const miscCategory = () => document.getElementById('category-misc')
 const tryAgainBtn = () => document.getElementById('try-again')
-const logoHomeLink = () => document.getElementById('logo-home')
 const randomBtn = () => document.getElementById('random-button')
 
 
@@ -34,10 +33,6 @@ const attachListLinkEvent = () => {
 
 const attachMealLinkEvent = () => {
     mealLink().addEventListener('click', loadMeals)
-}
-
-const attachHomeLinkEvent = () => {
-    logoHomeLink().addEventListener('click', loadHome)
 }
 
 
