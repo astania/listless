@@ -2,7 +2,6 @@
 const baseUrl = 'http://localhost:3000'
 
 
-
 //Node getters
 const mainDiv = () => document.getElementById('main')
 const homeLink = () => document.getElementById('home-link')
@@ -142,6 +141,7 @@ const loadList = event => {
     });
 }
 
+
 const submitForm = event => {
     event.preventDefault()
     const ul = document.createElement('ul')
@@ -267,6 +267,8 @@ const getRandomMeal = () => {
     fetch(baseUrl + '/meals' + '/' + randomMeal)
         .then(response => response.json())
         .then(meal => loadRandomMeal(meal))
+//add .catch
+
 }
 
 
